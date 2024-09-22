@@ -7,8 +7,8 @@ import torch
 import pandas as pd
 
 class ClassificationResult(TypedDict):
-    label: str
-    prob: float
+    label: list[str]
+    prob: list[float]
 
 def classify(image:ImageFile):
     # 모델과 프로세서 로드
@@ -31,14 +31,19 @@ def classify(image:ImageFile):
 
     # 결과 출력
     st.header("Classification Result")
-    
+    results = ClassificationResult(label=[],prob=[])
+    print(results)
     for i, label in enumerate(candidate_labels):
-        st.write(f"{label}: {probs[0][i].item():.2%}")
-        print(f"{label}: {probs[0][i].item():.2%}")
+        # st.write(f"{label}: {probs[0][i].item():.2%}")
+        # print(f"{label}: {probs[0][i].item():.2%}")
+        results['label'].append(label)
+        results['prob'].append(probs[0][i].item())
+    rdf = pd.DataFrame(results)
+    st.dataframe(rdf)
 
     # 가장 높은 확률의 클래스 출력
     st.write(f"\nBest match: {candidate_labels[probs.argmax().item()]}")
-    print(f"\nBest match: {candidate_labels[probs.argmax().item()]}")
+    # print(f"\nBest match: {candidate_labels[probs.argmax().item()]}")
 
 def main():
     st.set_page_config(
