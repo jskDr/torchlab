@@ -12,6 +12,7 @@ python = "^3.10"
 streamlit = "^1.38.0"
 ipykernel = "^6.29.5"
 torch = "^2.4.1"
+matplotlib = "^3.9.2"
 
 
 [build-system]
