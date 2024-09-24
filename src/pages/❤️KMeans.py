@@ -130,4 +130,5 @@ def main():
     with gc1:
         kmeans.kmeans_result()
         
-main()
+if __name__ == '__main__':
+    main()
