@@ -32,7 +32,7 @@ def classify(image:ImageFile):
     # 결과 출력
     st.header("Classification Result")
     results = ClassificationResult(label=[],prob=[])
-    print(results)
+    # print(results)
     for i, label in enumerate(candidate_labels):
         # st.write(f"{label}: {probs[0][i].item():.2%}")
         # print(f"{label}: {probs[0][i].item():.2%}")
