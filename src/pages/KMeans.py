@@ -2,6 +2,8 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import torch
 
+import plots
+
 class KMeans:
     def __init__(self):
         pass 
@@ -103,11 +105,7 @@ class KMeans:
         if D == 2:
             st.write("Plot of $X$ and $C_o$")
             fig, ax = plt.subplots()
-            ax.scatter(X[:,0], X[:,1])
-            # Add labels for each point
-            for i, (x, y) in enumerate(zip(X[:,0], X[:,1])):
-                ax.annotate(f'$x_{i}$({x:.2f}, {y:.2f})', (x, y), xytext=(5, 5), textcoords='offset points')
-            ax.scatter(C[:,0], C[:,1], c='r')
+            plots.plot_scatter(X, fig, ax)
             for i, (x, y) in enumerate(zip(C[:,0], C[:,1])):
                 ax.annotate(f'$c_{i}$({x:.2f}, {y:.2f})', (x, y), xytext=(-5, 5), textcoords='offset points')
             st.pyplot(fig)
