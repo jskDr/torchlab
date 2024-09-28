@@ -48,6 +48,4 @@ def test_each_process(anet, X_t, K):
     Yt = anet.fc(Ao_t) # N x K
     display_with_plot(Yt.cpu().detach(), 'Y^t')
 
-    st.subheader('Out of the Attention Block: $Y_\mathrm{anet}[t] \equiv Y[t]$')
-    Y = anet(X_t)
-    display_with_plot(Y.cpu().detach(), 'Y')
+    return Yt

@@ -6,7 +6,7 @@ from torch import nn
 import torch.nn.functional as F
 
 from plots import plot_scatter
-from page_attention import test_each_process
+from page_attention.attention_lib import test_each_process
 
 def display_with_plot(X, symbol='x'):
     D = X.shape[1]
@@ -75,7 +75,11 @@ class AttentionNet(nn.Module):
 
 anet = AttentionNet(D, K).to(device)
 
-test_each_process(anet, X_t, K)
+Yt = test_each_process(anet, X_t, K)
+
+st.subheader('Out of the Attention Block: $Y_\mathrm{anet}[t] \equiv Y[t]$')
+Y = anet(X_t)
+display_with_plot(Y.cpu().detach(), 'Y')
 
 e = torch.abs(Y - Yt).sum()
 e = e.cpu().detach()
