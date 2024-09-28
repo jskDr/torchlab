@@ -114,7 +114,7 @@ def main():
     st.set_page_config(
         page_title='KMeans by PyTorch',
         layout='wide',
-        page_icon='❤️'
+        page_icon=':fire:'
     )
 
     st.title("KMeans")

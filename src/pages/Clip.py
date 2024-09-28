@@ -49,7 +49,7 @@ def main():
     st.set_page_config(
         page_title='CLIP by PyTorch & Transformers',
         layout='centered',
-        page_icon='❤️'
+        page_icon=':fire:'
     )
     st.title('CLIP')
     # 이미지 로드 (여기서는 'image.jpg'라고 가정)
