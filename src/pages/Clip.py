@@ -55,6 +55,9 @@ def main():
     # 이미지 로드 (여기서는 'image.jpg'라고 가정)
     image = Image.open("./images/image.jpg")
     st.image(image)
+    
+    
+    
     classify(image)
     
 if __name__ == '__main__':
