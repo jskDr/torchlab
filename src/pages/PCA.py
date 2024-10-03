@@ -13,9 +13,16 @@ st.write(f"N: {N}, D: {D}")
 
 st.header('Processing')
 st.subheader('Eigen Decompostion')
-Rxx = torch.matmul(X.T, X) / N # Eigen vectors
+Rx = torch.matmul(X.T, X) / N # Eigen vectors
 st.write('Eigen matrix')
-st.write(Rxx)
+st.write(Rx)
+
+st.write('Eigen values and vectors')
+eigenvalues, eigenvectors = torch.linalg.eigh(Rx)
+st.write(eigenvalues)
+st.write(eigenvectors)
+
+
 
 
 
