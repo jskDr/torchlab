@@ -22,6 +22,7 @@ setuptools = "^75.1.0"
 ipywidgets = "^8.1.5"
 scikit-learn = "^1.5.2"
 gradio = "^4.44.1"
+watchdog = "^5.0.3"
 
 [build-system]
 requires = ["poetry-core"]
