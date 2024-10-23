@@ -25,6 +25,9 @@ gradio = "^4.44.1"
 watchdog = "^5.0.3"
 ultralytics = "8.0.200"
 
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
